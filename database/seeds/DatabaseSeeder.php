@@ -27,6 +27,12 @@ class DatabaseSeeder extends Seeder
                 'password' => $password,
                 'affiliate_id' => '4qOxx'
             ]);
+            DB::table('users')->insert([
+                'name' => 'test1',
+                'email' => 'test@test.test',
+                'password' => $password,
+                'affiliate_id' => 'YhhQl'
+            ]);
         }
     }
 }
