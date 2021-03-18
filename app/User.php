@@ -39,9 +39,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getReferralsAttribute()
-    {
-        return User::where('referred_by',$this->affiliate_id)->count();
-    }
-
 }
