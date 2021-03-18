@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +13,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserSeeder::class);
+        $email = 'dev@mobilerider.com';
+        $password = Hash::make('snowflake');
+
+        $filters = [
+            ['email', $email],
+        ];
+
+        if (!DB::table('users')->where($filters)->exists()) {
+            DB::table('users')->insert([
+                'name' => 'dev',
+                'email' => $email,
+                'password' => $password,
+
+            ]);
+        }
     }
 }
