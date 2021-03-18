@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect('/admin');
-});
+    return redirect('/admin')->with(request()->all());
+})->middleware('referral');
+
+//Route::get('/admin',[ Backpack\CRUD\app\Http\Controllers\AdminController::class,'redirect'])->middleware('referral');;

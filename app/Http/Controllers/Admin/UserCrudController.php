@@ -41,7 +41,20 @@ class UserCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::setFromDb(); // columns
-
+        $this->crud->addColumn( [
+            'name'  => 'affiliate_id', // The db column name
+            'label' => 'Referral link ', // Table column heading
+            'wrapper'   => [
+                'href' => function ($crud, $column, $entry, $related_key) {
+                    return url('?ref='.$entry->affiliate_id);
+                }
+            ],
+        ])->afterColumn('name');
+        $this->crud->addColumn([
+            'name' => 'referrals_number',
+            'label' => 'Referrals'
+        ])->makeFirstColumn();
+        $this->crud->orderBy('referrals_number','asc');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');

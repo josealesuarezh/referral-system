@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'dev',
                 'email' => $email,
                 'password' => $password,
-
+                'affiliate_id' => '4qOxx'
             ]);
         }
     }

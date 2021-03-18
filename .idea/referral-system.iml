@@ -115,6 +115,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/creativeorange/gravatar" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laracasts/generators" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/backpack/generators" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/questocat/laravel-referral" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
